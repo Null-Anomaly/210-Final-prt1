@@ -19,10 +19,8 @@ int main()
         getline(fin,line);
         breaker = line.substr(0,3);
         traffic[breaker] += 1;
-        cout << breaker << "\n";
         breaker = line.substr(4,6);
         traffic[breaker] += 1;
-        cout << breaker << "\n";
     }
     fin.close();
 
@@ -49,9 +47,9 @@ int main()
     string order;
     for(int i = 0; i < names.size(); i++)
     {
-        for(int j = 0; j <names.size(); j++)
+        for(int j = 0; j < names.size(); j++)
         {
-            if(traffic[names[i]] < traffic[names[j]])
+            if(names[i] < names[j])
             {
                 order = names[i];
                 names[i] = names[j];
@@ -62,7 +60,7 @@ int main()
 
     for(int i = 0; i < names.size(); i++)
     {
-        cout << names[i] << " ";
+        cout << names[i] << ": " << traffic[names[i]] << "\n";
     }
 
 }
