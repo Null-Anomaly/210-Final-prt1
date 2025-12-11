@@ -8,7 +8,7 @@ IDE used: VSC*/
 #include <vector>
 using namespace std;
 
-void between(map<string,int>);
+void between(map<string,int>, int, int);
 
 int main()
 {
@@ -86,5 +86,15 @@ int main()
         }
     }
     //^^^ Milestone 2 ^^^
+
+    between(traffic, 5,8);
     return 0;
+}
+
+void between(map<string,int> through, int low, int high)
+{
+    for(auto pair: through)
+    {
+        if(pair.second )
+    }
 }
