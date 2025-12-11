@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
+    //vvv Milestone 1 vvv
     map<string, int> traffic;
     ifstream fin("210-final-1-FA25.txt");
     string line;
@@ -58,9 +59,21 @@ int main()
         }
     }
 
+    cout << "All airport traffic counts:\n";
     for(int i = 0; i < names.size(); i++)
     {
         cout << names[i] << ": " << traffic[names[i]] << "\n";
     }
+    //^^^ Milestone 1 ^^^
 
+    int largest = -1;
+    for(int i = 0; i < names.size(); i++)
+    {
+        if(traffic[names[i]] > largest)
+        {
+            largest = traffic[names[i]];
+        }
+    }
+
+    return 0;
 }
