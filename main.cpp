@@ -14,9 +14,18 @@ int main()
     map<string, int> traffic;
     ifstream fin("210-final-1-FA25.txt");
     string line;
+    string breaker;
     while(fin.good())
     {
         getline(fin,line);
-        traffic[line] += 1;
+        breaker = line.substr(0,3);
+        traffic[breaker] += 1;
+        cout << breaker << "\n";
+        breaker = line.substr(4,6);
+        traffic[breaker] += 1;
+        cout << breaker << "\n";
     }
+    fin.close();
+
+    
 }
