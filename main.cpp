@@ -8,8 +8,6 @@ IDE used: VSC*/
 #include <vector>
 using namespace std;
 
-
-
 int main()
 {
     map<string, int> traffic;
@@ -28,9 +26,9 @@ int main()
     }
     fin.close();
 
-    vector<string> names;
-    auto it = traffic.begin();
     
+    auto it = traffic.begin();
+    vector<string> names = {it->first};
     while(it != traffic.end())
     {
         int checkin = 0;
@@ -45,5 +43,26 @@ int main()
         {
             names.push_back(it->first);
         }
+        it++;
     }
+
+    string order;
+    for(int i = 0; i < names.size(); i++)
+    {
+        for(int j = 0; j <names.size(); j++)
+        {
+            if(traffic[names[i]] < traffic[names[j]])
+            {
+                order = names[i];
+                names[i] = names[j];
+                names[j] = order;
+            }
+        }
+    }
+
+    for(int i = 0; i < names.size(); i++)
+    {
+        cout << names[i] << " ";
+    }
+
 }
