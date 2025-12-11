@@ -77,7 +77,7 @@ int main()
             largest = traffic[names[i]];
         }
     }
-    cout << "\nBusiest airport(s) with count : " << largest << "\n";
+    cout << "\nBusiest airport(s) with count " << largest << ":\n";
     for(int i = 0; i < names.size(); i++)
     {
         if(traffic[names[i]] == largest)
