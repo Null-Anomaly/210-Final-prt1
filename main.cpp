@@ -5,6 +5,7 @@ IDE used: VSC*/
 #include <string>
 #include <map>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 
@@ -27,5 +28,22 @@ int main()
     }
     fin.close();
 
+    vector<string> names;
+    auto it = traffic.begin();
     
+    while(it != traffic.end())
+    {
+        int checkin = 0;
+        for(int i = 0; i < names.size(); i++)
+        {
+            if(it->first != names[i])
+            {
+                checkin++;
+            }
+        }
+        if(checkin == names.size())
+        {
+            names.push_back(it->first);
+        }
+    }
 }
