@@ -8,7 +8,7 @@ IDE used: VSC*/
 #include <vector>
 using namespace std;
 
-void between(map<string,int>, int, int);
+void between(map<string,int>, vector<string>, int, int);
 
 int main()
 {
@@ -87,14 +87,24 @@ int main()
     }
     //^^^ Milestone 2 ^^^
 
-    between(traffic, 5,8);
+
+    // vvv Milestone 3 vvv
+    between(traffic,names,5,8);
+    between(traffic,names,9,12);
+    // ^^^Milestone 3 ^^^
     return 0;
 }
 
-void between(map<string,int> through, int low, int high)
+//vvv Milestone 3 vvv
+void between(map<string,int> through,vector<string> ordered, int low, int high)
 {
-    for(auto pair: through)
+    cout << "\nAirports with traffic between range [" << low << " and " << high << "]:\n";
+    for(int i = 0; i < ordered.size(); i++)
     {
-        if(pair.second )
+        if(through[ordered[i]] >= low && through[ordered[i]] <= high)
+        {
+            cout << ordered[i] << " " << through[ordered[i]] << "\n";
+        }
     }
 }
+//^^^ Milestone 3 ^^^
